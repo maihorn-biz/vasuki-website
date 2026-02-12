@@ -147,7 +147,16 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--navy) 0%, var(--blue-dark) 50%, var(--blue) 100%);
+    background: 
+        linear-gradient(135deg, 
+            rgba(26, 50, 88, 0.88) 0%, 
+            rgba(28, 76, 116, 0.85) 50%, 
+            rgba(35, 88, 130, 0.82) 100%
+        ),
+        url('images/hero-workspace-background.webp');
+    background-size: cover;
+    background-position: center right;
+    background-attachment: fixed;
     color: white;
     position: relative;
     overflow: hidden;
@@ -702,6 +711,11 @@ footer p {
 
 /* Responsive */
 @media (max-width: 968px) {
+    .hero {
+        background-attachment: scroll;
+        background-position: center center;
+    }
+    
     .nav-links {
         display: none;
     }
