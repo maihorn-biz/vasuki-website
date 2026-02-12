@@ -255,7 +255,7 @@ body.about-page .hero {
             rgba(28, 76, 116, 0.85) 50%, 
             rgba(35, 88, 130, 0.82) 100%
         ),
-        url('hero-about_background.jpg');
+        url('images/hero-about_background.jpg');
 }
 
 .cta-primary {
