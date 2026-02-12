@@ -1,7 +1,35 @@
 // Vasuki Website JavaScript - Multi-page version
 
-// Logo Carousel functionality
+// Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuToggle && navLinks) {
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = mobileMenuToggle.contains(event.target) || navLinks.contains(event.target);
+            if (!isClickInside && navLinks.classList.contains('active')) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    }
+    
+    // Logo Carousel functionality
     const track = document.querySelector('.carousel-track');
     const leftArrow = document.querySelector('.carousel-arrow-left');
     const rightArrow = document.querySelector('.carousel-arrow-right');
